@@ -24,10 +24,9 @@ public class AStarAlgorithm extends DijkstraAlgorithm {
 
             if (getInputData().getMode() == TIME)
             {
-                double maxSpeed = getInputData().getGraph().getGraphInformation().getMaximumSpeed() / 3.6;
-
+                double maxSpeed = getInputData().getGraph().getGraphInformation().getMaximumSpeed();
                 cost /= maxSpeed;
-                System.out.println("cost : " + cost);
+                cost *= 10;
             }
 
             m_labels[i] = new LabelStar(node, cost);

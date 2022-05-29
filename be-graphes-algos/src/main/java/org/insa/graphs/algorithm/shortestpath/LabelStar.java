@@ -9,7 +9,6 @@ public class LabelStar extends Label implements Comparable<Label>
     LabelStar(Node node, double ACost)
     {
         super(node);
-
         m_ACost = ACost;
     }
 
@@ -20,11 +19,6 @@ public class LabelStar extends Label implements Comparable<Label>
 
     public int compareTo(Label o)
     {
-        if (getTotalCost() == o.getTotalCost())
-        {
-            return (m_ACost > ((LabelStar) o).getACost())?-1:1;
-        }
-
-        return (getTotalCost() < o.getTotalCost())?-1:1;
+        return (getTotalCost() < ((LabelStar)o).getTotalCost())?-1:1;
     }
 }
